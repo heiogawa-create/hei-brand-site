@@ -1,8 +1,8 @@
 .header{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 0;transition:var(--transition)}
-.header--scrolled{padding:12px 0;background:rgba(8,8,8,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.header--scrolled{padding:12px 0;background:rgba(250,248,244,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
 .header__inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
 .header__logo{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:500}
-.header__logo-mark{width:32px;height:32px;background:linear-gradient(135deg,var(--gold),var(--gold-light));border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:18px;color:var(--bg);font-weight:700}
+.header__logo-mark{width:32px;height:32px;background:linear-gradient(135deg,var(--gold),var(--gold-light));border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:18px;color:#fff;font-weight:700}
 .header__logo em{font-style:normal;color:var(--text-2)}
 .header__nav{display:flex;align-items:center;gap:28px}
 .header__nav-link{font-size:13px;color:var(--text-2);transition:color var(--transition)}
