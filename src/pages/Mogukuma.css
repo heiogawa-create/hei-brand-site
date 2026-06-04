@@ -1,0 +1,33 @@
+.mogukuma{padding-bottom:100px}
+.mogukuma__hero{position:relative;padding:100px 0 80px;overflow:hidden;border-bottom:1px solid var(--border);margin-bottom:80px}
+.mogukuma__orb{position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(201,169,110,.15) 0%,transparent 70%);border-radius:50%;right:-100px;top:-100px;filter:blur(60px);pointer-events:none}
+.mogukuma__badge{display:inline-block;font-size:11px;letter-spacing:.1em;color:var(--gold);border:1px solid rgba(201,169,110,.3);padding:5px 14px;border-radius:100px;margin-bottom:28px}
+.mogukuma__title{font-family:var(--font-display);font-size:clamp(40px,7vw,80px);font-weight:400;line-height:1.1;color:var(--text);margin-bottom:24px}
+.mogukuma__title em{font-style:italic;background:linear-gradient(135deg,var(--gold),var(--gold-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.mogukuma__desc{font-size:16px;color:var(--text-2);line-height:1.8;max-width:500px;margin-bottom:36px}
+.mogukuma__cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:32px}
+.mogukuma__btn{display:inline-flex;align-items:center;padding:13px 28px;border-radius:100px;font-size:14px;font-weight:500;transition:all var(--transition)}
+.mogukuma__btn--primary{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--bg)}
+.mogukuma__btn--primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(201,169,110,.3)}
+.mogukuma__btn--secondary{border:1px solid var(--border-hover);color:var(--text-2)}
+.mogukuma__btn--secondary:hover{border-color:var(--gold);color:var(--gold)}
+.mogukuma__price{display:flex;align-items:baseline;gap:12px}
+.mogukuma__price-amount{font-family:var(--font-display);font-size:32px;color:var(--text)}
+.mogukuma__price-note{font-size:13px;color:var(--text-3)}
+.mogukuma__section-label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.mogukuma__section-title{font-family:var(--font-display);font-size:clamp(28px,4vw,40px);font-weight:400;color:var(--text);margin-bottom:48px}
+.mogukuma__features{padding:80px 0;border-bottom:1px solid var(--border)}
+.mogukuma__features-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.feature-card{padding:32px;background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius-lg)}
+.feature-card:hover{border-color:var(--border-hover)}
+.feature-card__icon{font-size:28px;display:block;margin-bottom:16px}
+.feature-card__title{font-size:17px;font-weight:500;color:var(--text);margin-bottom:10px}
+.feature-card__desc{font-size:13px;color:var(--text-2);line-height:1.7}
+.mogukuma__buy{padding:80px 0}
+.mogukuma__buy-inner{max-width:600px;margin:0 auto;text-align:center}
+.mogukuma__buy-title{font-family:var(--font-display);font-size:36px;font-weight:400;color:var(--text);margin-bottom:16px}
+.mogukuma__buy-desc{font-size:15px;color:var(--text-2);margin-bottom:32px}
+.mogukuma__platforms{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.mogukuma__platform-btn{padding:14px;border:1px solid var(--border);border-radius:var(--radius);font-size:14px;color:var(--text-2);text-align:center;transition:all var(--transition)}
+.mogukuma__platform-btn:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-dim)}
+@media(max-width:640px){.mogukuma__features-grid{grid-template-columns:1fr}.mogukuma__platforms{grid-template-columns:1fr}}

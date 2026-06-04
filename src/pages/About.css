@@ -1,0 +1,26 @@
+.about{padding-bottom:100px}
+.about__hero{padding:80px 0;border-bottom:1px solid var(--border);margin-bottom:80px}
+.about__hero-inner{display:grid;grid-template-columns:1fr auto;gap:64px;align-items:center}
+.about__label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.about__name{font-family:var(--font-display);font-size:clamp(36px,5vw,60px);font-weight:400;color:var(--text);margin-bottom:8px}
+.about__roles{font-size:14px;color:var(--gold);letter-spacing:.04em;margin-bottom:28px}
+.about__bio{font-size:15px;color:var(--text-2);line-height:1.9;max-width:560px}
+.about__avatar{width:160px;height:160px;background:linear-gradient(135deg,var(--gold),var(--gold-light));border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:72px;color:var(--bg)}
+.about__section-title{font-family:var(--font-display);font-size:28px;font-weight:400;color:var(--text);margin-bottom:40px}
+.about__career{margin-bottom:80px}
+.career-timeline{display:flex;flex-direction:column;border-left:1px solid var(--border);padding-left:32px;margin-left:12px}
+.career-item{position:relative;padding-bottom:40px}
+.career-item::before{content:'';position:absolute;left:-37px;top:6px;width:8px;height:8px;border-radius:50%;background:var(--gold);border:2px solid var(--bg);box-shadow:0 0 0 1px var(--gold)}
+.career-item__year{font-size:12px;color:var(--gold);letter-spacing:.06em;margin-bottom:6px;font-weight:500}
+.career-item__title{font-size:17px;font-weight:500;color:var(--text);margin-bottom:8px}
+.career-item__desc{font-size:14px;color:var(--text-2);line-height:1.7;max-width:540px}
+.about__skills{margin-bottom:80px}
+.skills-wrap{display:flex;flex-wrap:wrap;gap:8px}
+.skill-tag{font-size:13px;color:var(--text-2);background:var(--bg-2);border:1px solid var(--border);border-radius:100px;padding:6px 16px;transition:all var(--transition)}
+.skill-tag:hover{border-color:var(--gold);color:var(--gold)}
+.numbers-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
+.number-card{display:flex;flex-direction:column;align-items:center;padding:36px 24px;background:var(--bg-2);gap:8px;border-right:1px solid var(--border)}
+.number-card:last-child{border-right:none}
+.number-card__num{font-family:var(--font-display);font-size:40px;color:var(--text);line-height:1}
+.number-card__label{font-size:12px;color:var(--text-3);text-align:center}
+@media(max-width:768px){.about__hero-inner{grid-template-columns:1fr}.numbers-grid{grid-template-columns:repeat(2,1fr)}}
