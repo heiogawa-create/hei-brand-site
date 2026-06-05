@@ -121,7 +121,7 @@
   bottom: 4px; left: 0; right: 0;
   height: 6px;
   background: var(--gold-light);
-  opacity: 0.25;
+  opacity: 0.50;
   z-index: -1;
   border-radius: 3px;
 }
@@ -175,7 +175,7 @@
   user-select: none;
   line-height: 1;
   font-size: 180px;
-  opacity: 0.05;
+  opacity: 0.50;
 }
 
 /* ===== PROBLEM CARDS ===== */
@@ -537,7 +537,7 @@
 
 .moku-final-cta::before {
   content: '🐻'; position: absolute; font-size: 240px;
-  left: -60px; bottom: -60px; opacity: 0.1; transform: rotate(10deg); pointer-events: none;
+  left: -60px; bottom: -60px; opacity: 0.50; transform: rotate(10deg); pointer-events: none;
 }
 
 .moku-final-cta h2 {
@@ -589,7 +589,7 @@
 
 /* ===== ANIMATIONS ===== */
 .moku-fade {
-  opacity: 0; transform: translateY(30px);
+  opacity: 0.50; transform: translateY(30px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 .moku-fade--visible { opacity: 1; transform: translateY(0); }
