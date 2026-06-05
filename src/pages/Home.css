@@ -34,12 +34,6 @@
   letter-spacing:-.02em;
   color:#1a1008;
   margin-bottom:24px;
-  text-shadow:
-    3px  3px 0 rgba(255,255,255,0.85),
-   -3px -3px 0 rgba(255,255,255,0.85),
-    3px -3px 0 rgba(255,255,255,0.85),
-   -3px  3px 0 rgba(255,255,255,0.85),
-    0 0 32px rgba(255,255,255,0.9);
 }
 .hero__title em{
   font-style:italic;
