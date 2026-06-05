@@ -1,33 +1,604 @@
-.mogukuma{padding-bottom:100px}
-.mogukuma__hero{position:relative;padding:100px 0 80px;overflow:hidden;border-bottom:1px solid var(--border);margin-bottom:80px}
-.mogukuma__orb{position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(201,169,110,.15) 0%,transparent 70%);border-radius:50%;right:-100px;top:-100px;filter:blur(60px);pointer-events:none}
-.mogukuma__badge{display:inline-block;font-size:11px;letter-spacing:.1em;color:var(--gold);border:1px solid rgba(201,169,110,.3);padding:5px 14px;border-radius:100px;margin-bottom:28px}
-.mogukuma__title{font-family:var(--font-display);font-size:clamp(40px,7vw,80px);font-weight:400;line-height:1.1;color:var(--text);margin-bottom:24px}
-.mogukuma__title em{font-style:italic;background:linear-gradient(135deg,var(--gold),var(--gold-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.mogukuma__desc{font-size:16px;color:var(--text-2);line-height:1.8;max-width:500px;margin-bottom:36px}
-.mogukuma__cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:32px}
-.mogukuma__btn{display:inline-flex;align-items:center;padding:13px 28px;border-radius:100px;font-size:14px;font-weight:500;transition:all var(--transition)}
-.mogukuma__btn--primary{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--bg)}
-.mogukuma__btn--primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(201,169,110,.3)}
-.mogukuma__btn--secondary{border:1px solid var(--border-hover);color:var(--text-2)}
-.mogukuma__btn--secondary:hover{border-color:var(--gold);color:var(--gold)}
-.mogukuma__price{display:flex;align-items:baseline;gap:12px}
-.mogukuma__price-amount{font-family:var(--font-display);font-size:32px;color:var(--text)}
-.mogukuma__price-note{font-size:13px;color:var(--text-3)}
-.mogukuma__section-label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
-.mogukuma__section-title{font-family:var(--font-display);font-size:clamp(28px,4vw,40px);font-weight:400;color:var(--text);margin-bottom:48px}
-.mogukuma__features{padding:80px 0;border-bottom:1px solid var(--border)}
-.mogukuma__features-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.feature-card{padding:32px;background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius-lg)}
-.feature-card:hover{border-color:var(--border-hover)}
-.feature-card__icon{font-size:28px;display:block;margin-bottom:16px}
-.feature-card__title{font-size:17px;font-weight:500;color:var(--text);margin-bottom:10px}
-.feature-card__desc{font-size:13px;color:var(--text-2);line-height:1.7}
-.mogukuma__buy{padding:80px 0}
-.mogukuma__buy-inner{max-width:600px;margin:0 auto;text-align:center}
-.mogukuma__buy-title{font-family:var(--font-display);font-size:36px;font-weight:400;color:var(--text);margin-bottom:16px}
-.mogukuma__buy-desc{font-size:15px;color:var(--text-2);margin-bottom:32px}
-.mogukuma__platforms{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.mogukuma__platform-btn{padding:14px;border:1px solid var(--border);border-radius:var(--radius);font-size:14px;color:var(--text-2);text-align:center;transition:all var(--transition)}
-.mogukuma__platform-btn:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-dim)}
-@media(max-width:640px){.mogukuma__features-grid{grid-template-columns:1fr}.mogukuma__platforms{grid-template-columns:1fr}}
+:root {
+  --gold: #B8860B;
+  --gold-light: #C49A22;
+  --gold-pale: rgba(184,134,11,0.08);
+  --ivory: #F5F0E8;
+  --ivory-dark: #EDE6D4;
+  --bear-dark: #2A1E12;
+  --text-main: #1E1810;
+  --text-sub: #6B5840;
+  --shadow: rgba(58,42,26,0.10);
+}
+
+/* ===== RESET & BASE ===== */
+.moku-page * { box-sizing: border-box; margin: 0; padding: 0; }
+.moku-page { font-family: 'Noto Sans JP', sans-serif; color: var(--text-main); overflow-x: hidden; }
+
+/* ===== SECTION LABEL ===== */
+.moku-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid rgba(184,134,11,0.35);
+  padding: 4px 14px;
+  border-radius: 99px;
+  margin-bottom: 16px;
+}
+
+.moku-label--light {
+  color: var(--gold-light);
+  border-color: rgba(196,154,34,0.4);
+}
+
+/* ===== SECTION TITLE ===== */
+.moku-title {
+  font-family: 'Shippori Mincho', serif;
+  font-weight: 700;
+  font-size: clamp(26px, 4vw, 42px);
+  line-height: 1.3;
+  color: var(--text-main);
+  margin-bottom: 16px;
+}
+
+.moku-title span { color: var(--gold); }
+.moku-title--light { color: #F5F0E8; }
+.moku-title--light span { color: var(--gold-light); }
+
+/* ===== HERO ===== */
+.moku-hero {
+  background: linear-gradient(160deg, #F7F2EA 0%, #EDE6D4 50%, #E8DFC8 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 60px 20px 80px;
+  text-align: center;
+}
+
+.moku-hero::before {
+  content: '';
+  position: absolute;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(184,134,11,0.12) 0%, transparent 70%);
+  top: -200px; right: -200px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.moku-hero::after {
+  content: '🐻';
+  position: absolute;
+  font-size: 320px;
+  right: -40px; bottom: -60px;
+  opacity: 0.05;
+  transform: rotate(-10deg);
+  pointer-events: none;
+}
+
+.moku-hero__badges {
+  display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;
+  margin-bottom: 28px; position: relative; z-index: 1;
+}
+
+.moku-badge {
+  background: var(--bear-dark);
+  color: #F5F0E8;
+  font-size: 12px; font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 99px;
+  letter-spacing: 0.04em;
+}
+
+.moku-badge--gold { background: var(--gold); }
+.moku-badge--green { background: #4A6741; }
+
+.moku-hero__title {
+  font-family: 'Shippori Mincho', serif;
+  font-weight: 800;
+  font-size: clamp(36px, 7vw, 72px);
+  line-height: 1.2;
+  color: var(--text-main);
+  margin-bottom: 12px;
+  position: relative; z-index: 1;
+}
+
+.moku-hero__title em {
+  font-style: normal;
+  font-family: 'Zen Kurenaido', serif;
+  color: var(--gold);
+  position: relative;
+}
+
+.moku-hero__title em::after {
+  content: '';
+  position: absolute;
+  bottom: 4px; left: 0; right: 0;
+  height: 6px;
+  background: var(--gold-light);
+  opacity: 0.25;
+  z-index: -1;
+  border-radius: 3px;
+}
+
+.moku-hero__sub {
+  font-size: clamp(15px, 2vw, 20px);
+  color: var(--text-sub);
+  margin-bottom: 40px;
+  position: relative; z-index: 1;
+}
+
+.moku-hero__cta {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: #fff;
+  font-family: 'Shippori Mincho', serif;
+  font-weight: 700;
+  font-size: clamp(15px, 2vw, 18px);
+  padding: 18px 48px;
+  border-radius: 99px;
+  text-decoration: none;
+  display: inline-block;
+  position: relative; z-index: 1;
+  box-shadow: 0 8px 32px rgba(184,134,11,0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: none; cursor: pointer;
+}
+
+.moku-hero__cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 40px rgba(184,134,11,0.45);
+}
+
+.moku-hero__note {
+  font-size: 12px; color: var(--text-sub);
+  margin-top: 12px; position: relative; z-index: 1;
+}
+
+/* ===== SECTIONS ===== */
+.moku-section { padding: 80px 20px; position: relative; overflow: hidden; }
+.moku-section--ivory { background: var(--ivory); }
+.moku-section--ivory-dark { background: var(--ivory-dark); }
+.moku-section--dark { background: #2A1E12; color: #F5F0E8; }
+.moku-section--white { background: #fff; }
+
+.moku-container { max-width: 900px; margin: 0 auto; }
+
+/* ===== BEAR DECO ===== */
+.moku-bear-deco {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+  font-size: 180px;
+  opacity: 0.05;
+}
+
+/* ===== PROBLEM CARDS ===== */
+.moku-problem-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.moku-problem-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(196,154,34,0.2);
+  border-radius: 16px;
+  padding: 28px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.moku-problem-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+}
+
+.moku-problem-card__emoji { font-size: 32px; margin-bottom: 12px; display: block; }
+.moku-problem-card p { font-size: 15px; line-height: 1.8; color: rgba(245,240,232,0.85); }
+.moku-problem-card__sub { font-size: 13px; color: var(--gold-light); margin-top: 8px; font-style: italic; }
+
+/* ===== QUOTE ===== */
+.moku-quote {
+  background: rgba(184,134,11,0.06);
+  border-left: 4px solid var(--gold-light);
+  border-radius: 0 12px 12px 0;
+  padding: 20px 24px;
+  margin-top: 40px;
+}
+
+.moku-quote--light {
+  background: rgba(184,134,11,0.07);
+  border-color: var(--gold);
+}
+
+.moku-quote__who {
+  font-size: 12px; font-weight: 700;
+  color: var(--gold-light);
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+  display: flex; align-items: center; gap: 6px;
+}
+
+.moku-quote__who--dark { color: var(--gold); }
+.moku-quote p { font-size: 15px; line-height: 1.8; color: rgba(245,240,232,0.9); }
+.moku-quote--light p { color: var(--text-main); }
+.moku-quote strong { color: var(--gold-light); }
+.moku-quote--light strong { color: var(--gold); }
+
+/* ===== FEATURES ===== */
+.moku-feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+@media (max-width: 640px) { .moku-feature-grid { grid-template-columns: 1fr; } }
+
+.moku-feature-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 32px 28px;
+  box-shadow: 0 4px 24px var(--shadow);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.moku-feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px var(--shadow);
+}
+
+.moku-feature-card--premium { border: 2px solid var(--gold); }
+
+.moku-feature-card--premium::after {
+  content: 'PREMIUM';
+  position: absolute;
+  top: 16px; right: -24px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  color: #fff;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 4px 36px;
+  transform: rotate(45deg);
+}
+
+.moku-feature-card--wide { grid-column: 1 / -1; border: 2px solid rgba(184,134,11,0.3); }
+
+.moku-feature-card__icon { font-size: 40px; margin-bottom: 16px; display: block; }
+
+.moku-feature-card h3 {
+  font-family: 'Shippori Mincho', serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--text-main);
+  margin-bottom: 10px;
+}
+
+.moku-feature-card p { font-size: 14px; line-height: 1.9; color: var(--text-sub); }
+
+.moku-highlight {
+  display: inline-block;
+  background: rgba(184,134,11,0.08);
+  color: var(--gold);
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.moku-feature-card__imgs {
+  display: flex; gap: 8px; margin-top: 16px; overflow-x: auto;
+}
+
+.moku-feature-card__imgs img {
+  width: calc(33% - 6px); min-width: 120px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px var(--shadow);
+  flex-shrink: 0;
+}
+
+.moku-feature-card__img {
+  width: 100%; max-width: 300px;
+  border-radius: 16px;
+  margin-top: 16px;
+  display: block;
+  box-shadow: 0 4px 20px var(--shadow);
+}
+
+/* ===== COMPARE TABLE ===== */
+.moku-table {
+  width: 100%;
+  border-collapse: separate; border-spacing: 0;
+  margin-top: 40px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px var(--shadow);
+}
+
+.moku-table th { padding: 16px 20px; font-family: 'Shippori Mincho', serif; font-weight: 700; font-size: 15px; }
+.moku-table th:first-child { background: var(--bear-dark); color: #F5F0E8; text-align: left; width: 40%; }
+.moku-table th:nth-child(2) { background: #6B6B6B; color: #fff; text-align: center; width: 30%; }
+.moku-table th:nth-child(3) { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #fff; text-align: center; width: 30%; }
+.moku-table td { padding: 14px 20px; font-size: 14px; border-bottom: 1px solid rgba(184,134,11,0.06); }
+.moku-table tr:last-child td { border-bottom: none; }
+.moku-table tr:nth-child(even) td { background: rgba(255,255,255,0.6); }
+.moku-table tr:nth-child(odd) td { background: #fff; }
+.moku-table td:first-child { font-weight: 700; color: var(--text-main); }
+.moku-table td:nth-child(2) { text-align: center; color: #999; }
+.moku-table td:nth-child(3) { text-align: center; color: #4A6741; font-weight: 700; }
+
+/* ===== PRICING ===== */
+.moku-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+
+@media (max-width: 640px) { .moku-pricing-grid { grid-template-columns: 1fr; } }
+
+.moku-pricing-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(196,154,34,0.2);
+  border-radius: 20px;
+  padding: 32px 24px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.25s;
+}
+
+.moku-pricing-card:hover { transform: translateY(-4px); }
+
+.moku-pricing-card--popular {
+  background: linear-gradient(160deg, rgba(184,134,11,0.18), rgba(184,134,11,0.05));
+  border: 2px solid var(--gold);
+}
+
+.moku-popular-badge {
+  position: absolute;
+  top: -14px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: var(--bear-dark);
+  font-size: 11px; font-weight: 700;
+  padding: 4px 16px; border-radius: 99px;
+  white-space: nowrap; letter-spacing: 0.06em;
+}
+
+.moku-plan-name { font-family: 'Shippori Mincho', serif; font-weight: 700; font-size: 14px; color: var(--gold-light); letter-spacing: 0.08em; margin-bottom: 12px; text-transform: uppercase; }
+.moku-plan-price { font-family: 'Shippori Mincho', serif; font-weight: 900; font-size: 48px; color: #F5F0E8; line-height: 1; margin-bottom: 4px; }
+.moku-plan-price span { font-size: 18px; font-weight: 500; }
+.moku-plan-period { font-size: 13px; color: rgba(245,240,232,0.5); margin-bottom: 20px; }
+
+.moku-plan-features { list-style: none; text-align: left; }
+.moku-plan-features li { font-size: 13px; color: rgba(245,240,232,0.8); padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; align-items: flex-start; gap: 8px; }
+.moku-plan-features li::before { content: '✓'; color: var(--gold-light); font-weight: 700; flex-shrink: 0; }
+
+/* ===== REFERRAL ===== */
+.moku-referral-flow {
+  display: flex; align-items: center; justify-content: center;
+  gap: 0; margin: 40px 0; flex-wrap: wrap;
+}
+
+.moku-referral-step {
+  background: #fff;
+  border-radius: 16px; padding: 24px 20px;
+  text-align: center; width: 160px;
+  box-shadow: 0 4px 20px var(--shadow);
+}
+
+.moku-referral-step__ico { font-size: 36px; margin-bottom: 10px; display: block; }
+.moku-referral-step p { font-size: 13px; font-weight: 700; color: var(--text-main); }
+.moku-referral-arrow { font-size: 28px; color: var(--gold); padding: 0 12px; }
+
+.moku-referral-calc {
+  background: #fff; border-radius: 16px; padding: 28px 32px;
+  box-shadow: 0 4px 20px var(--shadow);
+  max-width: 500px; margin: 0 auto;
+}
+
+.moku-referral-calc h4 { font-family: 'Shippori Mincho', serif; font-size: 16px; font-weight: 700; color: var(--text-main); margin-bottom: 16px; }
+
+.moku-calc-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(184,134,11,0.08); font-size: 14px; }
+.moku-calc-row:last-child { border-bottom: none; }
+.moku-calc-row__label { color: var(--text-sub); }
+.moku-calc-row__value { font-weight: 700; color: var(--text-main); }
+.moku-calc-row--total .moku-calc-row__value { color: #C0614A; font-size: 18px; }
+.moku-calc-row--green .moku-calc-row__value { color: #4A6741; font-size: 18px; }
+
+/* ===== TESTIMONIALS ===== */
+.moku-testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px; margin-top: 40px;
+}
+
+.moku-testimonial-card {
+  background: var(--ivory);
+  border-radius: 16px; padding: 28px 24px;
+  position: relative;
+  border: 1px solid rgba(184,134,11,0.12);
+}
+
+.moku-testimonial-card::before {
+  content: '"';
+  position: absolute; top: 12px; left: 20px;
+  font-size: 60px; color: rgba(184,134,11,0.15);
+  font-family: Georgia, serif; line-height: 1;
+}
+
+.moku-testimonial-card p { font-size: 14px; line-height: 1.9; color: var(--text-main); margin-bottom: 16px; padding-top: 20px; }
+.moku-testimonial-card__who { font-size: 12px; color: var(--text-sub); font-weight: 700; }
+
+/* ===== RESULTS ===== */
+.moku-results-list {
+  list-style: none; margin-top: 36px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+}
+
+@media (max-width: 520px) { .moku-results-list { grid-template-columns: 1fr; } }
+
+.moku-results-list li {
+  background: #fff; border-radius: 14px; padding: 20px 22px;
+  display: flex; align-items: center; gap: 14px;
+  font-size: 15px; font-weight: 500; color: var(--text-main);
+  box-shadow: 0 2px 12px var(--shadow);
+  border-left: 4px solid var(--gold);
+}
+
+.moku-results-list__dot { width: 10px; height: 10px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+
+/* ===== FAQ ===== */
+.moku-faq-list { margin-top: 40px; display: flex; flex-direction: column; gap: 16px; }
+
+.moku-faq-item { background: var(--ivory); border-radius: 14px; overflow: hidden; border: 1px solid rgba(184,134,11,0.10); }
+
+.moku-faq-q {
+  padding: 20px 24px; font-weight: 700; font-size: 15px; color: var(--text-main);
+  cursor: pointer; display: flex; align-items: flex-start; gap: 12px;
+  transition: background 0.2s; list-style: none;
+  border: none; background: transparent; width: 100%; text-align: left;
+}
+
+.moku-faq-q:hover { background: rgba(184,134,11,0.06); }
+.moku-faq-q .q-mark { color: var(--gold); flex-shrink: 0; font-family: 'Shippori Mincho', serif; font-size: 18px; font-weight: 700; }
+.moku-faq-q .arrow { margin-left: auto; font-size: 14px; color: var(--gold); flex-shrink: 0; transition: transform 0.2s; }
+.moku-faq-item--open .arrow { transform: rotate(180deg); }
+.moku-faq-item--open .moku-faq-q { background: rgba(184,134,11,0.06); }
+
+.moku-faq-a { display: none; padding: 0 24px 20px 48px; font-size: 14px; line-height: 1.9; color: var(--text-sub); border-top: 1px solid rgba(184,134,11,0.08); }
+.moku-faq-item--open .moku-faq-a { display: block; }
+
+/* ===== DEVELOPER ===== */
+.moku-dev-inner {
+  display: grid; grid-template-columns: 1fr 2fr; gap: 40px;
+  align-items: center; margin-top: 40px;
+}
+
+@media (max-width: 640px) { .moku-dev-inner { grid-template-columns: 1fr; text-align: center; } }
+
+.moku-dev-avatar {
+  background: rgba(184,134,11,0.08);
+  border: 2px solid rgba(196,154,34,0.25);
+  border-radius: 20px; padding: 32px 24px; text-align: center;
+}
+
+.moku-dev-avatar__bear { font-size: 64px; display: block; margin-bottom: 12px; }
+.moku-dev-avatar__name { font-family: 'Shippori Mincho', serif; font-weight: 700; font-size: 18px; color: var(--gold-light); }
+.moku-dev-avatar__role { font-size: 13px; color: rgba(245,240,232,0.6); margin-top: 4px; }
+
+.moku-dev-text p { font-size: 15px; line-height: 2; color: rgba(245,240,232,0.85); margin-bottom: 16px; }
+.moku-dev-text strong { color: var(--gold-light); }
+
+/* ===== GUIDE ===== */
+.moku-guide-steps { margin-top: 40px; display: flex; flex-direction: column; gap: 24px; position: relative; }
+
+.moku-guide-steps::before {
+  content: ''; position: absolute;
+  left: 28px; top: 40px; bottom: 40px; width: 2px;
+  background: linear-gradient(to bottom, var(--gold), rgba(184,134,11,0.05));
+}
+
+.moku-guide-step {
+  background: #fff; border-radius: 16px; padding: 24px 24px 24px 72px;
+  box-shadow: 0 2px 16px var(--shadow); position: relative;
+  border: 1px solid rgba(184,134,11,0.08);
+}
+
+.moku-guide-step__num {
+  position: absolute; left: 20px; top: 24px;
+  width: 36px; height: 36px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-family: 'Shippori Mincho', serif; font-weight: 900; font-size: 14px; color: #fff;
+}
+
+.moku-guide-step h4 { font-family: 'Shippori Mincho', serif; font-weight: 700; font-size: 17px; color: var(--text-main); margin-bottom: 8px; }
+.moku-guide-step p { font-size: 14px; line-height: 1.9; color: var(--text-sub); }
+.moku-guide-step__note { font-size: 12px; color: var(--gold); background: rgba(184,134,11,0.07); border-radius: 8px; padding: 8px 12px; margin-top: 10px; }
+
+/* ===== FINAL CTA ===== */
+.moku-final-cta {
+  background: linear-gradient(160deg, var(--gold), var(--gold-light));
+  padding: 80px 20px; text-align: center; color: #fff; position: relative; overflow: hidden;
+}
+
+.moku-final-cta::before {
+  content: '🐻'; position: absolute; font-size: 240px;
+  left: -60px; bottom: -60px; opacity: 0.1; transform: rotate(10deg); pointer-events: none;
+}
+
+.moku-final-cta h2 {
+  font-family: 'Shippori Mincho', serif;
+  font-weight: 900; font-size: clamp(26px, 4vw, 48px);
+  line-height: 1.4; margin-bottom: 20px;
+  position: relative; z-index: 1;
+}
+
+.moku-final-cta p { font-size: clamp(14px, 2vw, 17px); opacity: 0.9; margin-bottom: 40px; line-height: 1.9; position: relative; z-index: 1; }
+
+.moku-final-cta__btn {
+  background: var(--bear-dark);
+  color: var(--gold-light);
+  font-family: 'Shippori Mincho', serif;
+  font-weight: 700; font-size: clamp(15px, 2vw, 18px);
+  padding: 20px 56px; border-radius: 99px;
+  text-decoration: none; display: inline-block;
+  position: relative; z-index: 1;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.moku-final-cta__btn:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(0,0,0,0.3); }
+.moku-final-cta__note { font-size: 13px; opacity: 0.75; margin-top: 16px; position: relative; z-index: 1; }
+
+/* ===== STICKY BAR ===== */
+.moku-sticky {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: #2A1E12; padding: 12px 20px;
+  display: flex; align-items: center; justify-content: space-between;
+  z-index: 100; box-shadow: 0 -4px 24px rgba(0,0,0,0.2);
+  transform: translateY(100%); transition: transform 0.3s;
+}
+
+.moku-sticky--show { transform: translateY(0); }
+.moku-sticky span { color: #F5F0E8; font-size: 14px; font-weight: 500; }
+
+.moku-sticky a {
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  color: #fff; font-weight: 700; font-size: 14px;
+  padding: 10px 24px; border-radius: 99px;
+  text-decoration: none; white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(184,134,11,0.4);
+  transition: transform 0.2s;
+}
+
+.moku-sticky a:hover { transform: scale(1.03); }
+
+/* ===== ANIMATIONS ===== */
+.moku-fade {
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.moku-fade--visible { opacity: 1; transform: translateY(0); }
+
+/* ===== FOOTER ===== */
+.moku-footer {
+  background: var(--bear-dark); color: rgba(245,240,232,0.5);
+  text-align: center; padding: 32px 20px;
+  font-size: 13px; line-height: 2;
+}
+
+.moku-footer a { color: var(--gold-light); text-decoration: none; }
