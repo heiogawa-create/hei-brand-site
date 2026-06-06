@@ -5,16 +5,17 @@ const HEALTH_BANNER = 'data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUN
 
 const P = [
   { id:1, title:'肩関節インピンジメント症候群の最新リハビリ戦略2025',      cat:'肩・上肢', date:'2025.06.01', min:'12' },
-  { id:2, title:'膝OAに対するエビデンスベースの運動療法',                    cat:'膝・下肢', date:'2025.05.20', min:'10' },
-  { id:3, title:'高タンパク食が筋肉と代謝に与える最新エビデンス',            cat:'栄養学',   date:'2025.05.10', min:'15' },
-  { id:4, title:'時間栄養学とダイエット：食べる時間帯の科学',                cat:'栄養学',   date:'2025.04.28', min:'8'  },
-  { id:5, title:'睡眠と栄養の深い関係：質の良い眠りのための食事法',          cat:'睡眠',     date:'2025.04.15', min:'11' },
-  { id:6, title:'水分補給の新常識：スポーツ科学から学ぶ水の飲み方',          cat:'栄養学',   date:'2025.04.01', min:'9'  },
+  { id:2, title:'膝OAに対するエビデンスベースの運動療法',                   cat:'膝・下肢', date:'2025.05.20', min:'10' },
+  { id:3, title:'高タンパク食が筋肉と代謝に与える最新エビデンス',           cat:'栄養学',   date:'2025.05.10', min:'15' },
+  { id:4, title:'時間栄養学とダイエット：食べる時間帯の科学',               cat:'栄養学',   date:'2025.04.28', min:'8'  },
+  { id:5, title:'睡眠と栄養の深い関係：質の良い眠りのための食事法',         cat:'睡眠',     date:'2025.04.15', min:'11' },
+  { id:6, title:'水分補給の新常識：スポーツ科学から学ぶ水の飲み方',         cat:'栄養学',   date:'2025.04.01', min:'9'  },
 ]
 
 export default function HealthBlog() {
   return (
     <div className="blog-page">
+      {/* ヒーロー */}
       <div className="blog-page__hero" style={{ backgroundImage: `url(${HEALTH_HERO})` }}>
         <div className="container">
           <div className="blog-page__label">Health & Nutrition</div>
@@ -22,26 +23,31 @@ export default function HealthBlog() {
           <p className="blog-page__desc">理学療法士が届ける、科学的根拠のある健康・栄養情報</p>
         </div>
       </div>
-      <div className="container">
-        <div className="blog-banner">
-          <img src={HEALTH_BANNER} alt="健康的な読書" />
-        </div>
-        <div className="blog-grid">
-          {P.map(p => (
-            <article key={p.id} className="post-card">
-              <div className="post-card__meta">
-                <span className="post-card__cat">{p.cat}</span>
-                <span className="post-card__date">{p.date}</span>
-                <span className="post-card__min">{p.min} min</span>
-              </div>
-              <h2 className="post-card__title">{p.title}</h2>
-              <span className="post-card__arrow">→</span>
-            </article>
-          ))}
-        </div>
-        <div className="blog-page__note-cta">
-          <p>有料詳細版はnoteで公開中</p>
-          <a href="https://note.com/" target="_blank" rel="noopener noreferrer">noteで読む →</a>
+
+      {/* 記事リスト：女性読書写真を背景に */}
+      <div
+        className="blog-list-bg"
+        style={{ backgroundImage: `url(${HEALTH_BANNER})` }}
+      >
+        <div className="blog-list-bg__overlay" />
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+          <div className="blog-grid">
+            {P.map(p => (
+              <article key={p.id} className="post-card">
+                <div className="post-card__meta">
+                  <span className="post-card__cat">{p.cat}</span>
+                  <span className="post-card__date">{p.date}</span>
+                  <span className="post-card__min">{p.min} min</span>
+                </div>
+                <h2 className="post-card__title">{p.title}</h2>
+                <span className="post-card__arrow">→</span>
+              </article>
+            ))}
+          </div>
+          <div className="blog-page__note-cta">
+            <p>有料詳細版はnoteで公開中</p>
+            <a href="https://note.com/" target="_blank" rel="noopener noreferrer">noteで読む →</a>
+          </div>
         </div>
       </div>
     </div>
