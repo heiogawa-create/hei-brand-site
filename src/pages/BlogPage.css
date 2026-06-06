@@ -31,7 +31,7 @@
 .blog-list-bg__overlay{
   position:absolute;
   inset:0;
-  background:rgba(245,240,232,0.22);
+  background:rgba(245,240,232,0.08);
 }
 
 .blog-grid{display:grid;grid-template-columns:1fr;gap:0}
