@@ -22,7 +22,7 @@
 .blog-list-bg{
   position:relative;
   background-size:cover;
-  background-position:center center;
+  background-position:center 80%;
   background-repeat:no-repeat;
   background-attachment:fixed;
   padding-bottom:100px;
