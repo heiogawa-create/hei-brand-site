@@ -22,7 +22,7 @@
 .blog-list-bg{
   position:relative;
   background-size:cover;
-  background-position:center 80%;
+  background-position:center center;
   background-repeat:no-repeat;
   background-attachment:fixed;
   padding-bottom:100px;
@@ -31,7 +31,7 @@
 .blog-list-bg__overlay{
   position:absolute;
   inset:0;
-  background:rgba(245,240,232,0.45);
+  background:rgba(245,240,232,0.22);
 }
 
 .blog-grid{display:grid;grid-template-columns:1fr;gap:0}
