@@ -11,7 +11,7 @@
   content:'';
   position:absolute;
   inset:0;
-  background:rgba(245,240,232,0.82);
+  background:rgba(245,240,232,0.40);
 }
 .blog-page__hero .container{position:relative;z-index:1}
 .blog-page__label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
