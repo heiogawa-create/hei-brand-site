@@ -9,7 +9,7 @@ const P = [
   { id:3, title:'高タンパク食が筋肉と代謝に与える最新エビデンス',           cat:'栄養学',   date:'2025.05.10', min:'15' },
   { id:4, title:'時間栄養学とダイエット：食べる時間帯の科学',               cat:'栄養学',   date:'2025.04.28', min:'8'  },
   { id:5, title:'睡眠と栄養の深い関係：質の良い眠りのための食事法',         cat:'睡眠',     date:'2025.04.15', min:'11' },
-  { id:6, title:'水分補給の新常識：スポーツ科学から学ぶ水の飲み方',         cat:'栄養学',   date:'2025.04.01', min:'9'  },
+  { id:6, title:'水分補給の新常識：スポーツ科学から学ぶ水の飲み方',         cat:'栄養学',   date:'2025.04.01', min:'9', link:'/articles/suibun-hokyu.html' },
 ]
 
 export default function HealthBlog() {
@@ -33,15 +33,27 @@ export default function HealthBlog() {
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div className="blog-grid">
             {P.map(p => (
-              <article key={p.id} className="post-card">
-                <div className="post-card__meta">
-                  <span className="post-card__cat">{p.cat}</span>
-                  <span className="post-card__date">{p.date}</span>
-                  <span className="post-card__min">{p.min} min</span>
-                </div>
-                <h2 className="post-card__title">{p.title}</h2>
-                <span className="post-card__arrow">→</span>
-              </article>
+              p.link ? (
+                <a key={p.id} href={p.link} target="_blank" rel="noopener noreferrer" className="post-card">
+                  <div className="post-card__meta">
+                    <span className="post-card__cat">{p.cat}</span>
+                    <span className="post-card__date">{p.date}</span>
+                    <span className="post-card__min">{p.min} min</span>
+                  </div>
+                  <h2 className="post-card__title">{p.title}</h2>
+                  <span className="post-card__arrow">→</span>
+                </a>
+              ) : (
+                <article key={p.id} className="post-card">
+                  <div className="post-card__meta">
+                    <span className="post-card__cat">{p.cat}</span>
+                    <span className="post-card__date">{p.date}</span>
+                    <span className="post-card__min">{p.min} min</span>
+                  </div>
+                  <h2 className="post-card__title">{p.title}</h2>
+                  <span className="post-card__arrow">→</span>
+                </article>
+              )
             ))}
           </div>
           <div className="blog-page__note-cta">

@@ -50,6 +50,8 @@
   margin-bottom: 10px;
   max-width: 60%;
   transition: all var(--transition);
+  text-decoration: none;
+  color: inherit;
 }
 .post-card:hover { padding-left: 32px; background: rgba(255,255,255,0.96); box-shadow: 0 4px 20px rgba(184,134,11,0.12); max-width: 60%; }
 .post-card__meta { display: flex; flex-direction: column; gap: 4px; min-width: 80px; }
