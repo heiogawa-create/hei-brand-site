@@ -6,7 +6,7 @@ const HEALTH_BANNER = 'data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUN
 const P = [
   { id:1, title:'肩関節インピンジメント症候群の最新リハビリ戦略2025',      cat:'肩・上肢', date:'2025.06.01', min:'12' },
   { id:2, title:'膝OAに対するエビデンスベースの運動療法',                   cat:'膝・下肢', date:'2025.05.20', min:'10' },
-  { id:3, title:'高タンパク食が筋肉と代謝に与える最新エビデンス',           cat:'栄養学',   date:'2025.05.10', min:'15' },
+  { id:3, title:'タンパク質神話の裏側：賢く、健康的に痩せるための5つの意外な事実', cat:'栄養学',   date:'2025.05.10', min:'15', link:'/articles/protein-myth.html' },
   { id:4, title:'時間栄養学とダイエット：食べる時間帯の科学',               cat:'栄養学',   date:'2025.04.28', min:'8'  },
   { id:5, title:'睡眠と栄養の深い関係：質の良い眠りのための食事法',         cat:'睡眠',     date:'2025.04.15', min:'11' },
   { id:6, title:'水分補給の新常識：スポーツ科学から学ぶ水の飲み方',         cat:'栄養学',   date:'2025.04.01', min:'9', link:'/articles/suibun-hokyu.html' },
