@@ -5,7 +5,7 @@ const AI_WOMAN  = 'data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1B
 
 const P = [
   { id:1, title:'お酢でやせる?さわやかに続ける、酸っぱい健康習慣',  cat:'ダイエット', date:'2025.06.01', min:'18', link:'/articles/osu-diet.html' },
-  { id:2, title:'Canva×AI：プロ品質のSNS画像を10分で量産する方法',           cat:'Canva',     date:'2025.05.18', min:'10' },
+  { id:2, title:'食べる順番を変えるだけ　血糖値を味方につける食べ方',           cat:'ダイエット', date:'2025.05.18', min:'10', link:'/articles/eating-order-diet.html' },
   { id:3, title:'NotebookLMで研究論文を瞬時に要約する完全ガイド',             cat:'Google AI', date:'2025.05.05', min:'8'  },
   { id:4, title:'Instagram Graph API×Claude：投稿自動化の全手順',            cat:'自動化',    date:'2025.04.22', min:'20' },
   { id:5, title:'Zapier AI Agentで作業を自動化：ノーコードで月100時間削減',   cat:'自動化',    date:'2025.04.10', min:'13' },
