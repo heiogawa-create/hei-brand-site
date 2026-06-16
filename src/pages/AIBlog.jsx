@@ -17,9 +17,9 @@ export default function AIBlog() {
     <div className="blog-page">
       <div className="blog-page__hero" style={{ backgroundImage: `url(${AI_HERO})` }}>
         <div className="container">
-          <div className="blog-page__label">AI Tools</div>
-          <h1 className="blog-page__title">AI活用ブログ</h1>
-          <p className="blog-page__desc">実践的なAIツール活用術を、現場目線で発信</p>
+          <div className="blog-page__label">DIET TIPS</div>
+          <h1 className="blog-page__title">ダイエット豆知識</h1>
+          <p className="blog-page__desc">科学的根拠に基づいたダイエット情報を、わかりやすくお届け</p>
         </div>
       </div>
       <div
