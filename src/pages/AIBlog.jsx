@@ -8,7 +8,7 @@ const P = [
   { id:2, title:'食べる順番を変えるだけ　血糖値を味方につける食べ方',           cat:'ダイエット', date:'2025.05.18', min:'10', link:'/articles/eating-order-diet.html' },
   { id:3, title:'筋肉は「第2の脳」だった？賢く痩せるための筋トレ新常識',             cat:'ダイエット', date:'2025.05.05', min:'8', link:'/articles/muscle-brain.html'  },
   { id:4, title:'寝るだけで痩せる？睡眠の質がダイエットの成否を分ける科学的理由',            cat:'ダイエット', date:'2025.04.22', min:'20', link:'/articles/sleep-diet.html' },
-  { id:5, title:'Zapier AI Agentで作業を自動化：ノーコードで月100時間削減',   cat:'自動化',    date:'2025.04.10', min:'13' },
+  { id:5, title:'「痩せ菌」は実在する？腸内フローラがダイエットの成否を決める最新科学',   cat:'ダイエット', date:'2025.04.10', min:'13', link:'/articles/gut-flora-diet.html' },
   { id:6, title:'Grok vs ChatGPT vs Claude：2025年最強AIツール比較',          cat:'比較',      date:'2025.03.28', min:'15' },
 ]
 
