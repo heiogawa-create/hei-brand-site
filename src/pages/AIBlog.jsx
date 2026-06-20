@@ -9,7 +9,7 @@ const P = [
   { id:3, title:'筋肉は「第2の脳」だった？賢く痩せるための筋トレ新常識',             cat:'ダイエット', date:'2025.05.05', min:'8', link:'/articles/muscle-brain.html'  },
   { id:4, title:'寝るだけで痩せる？睡眠の質がダイエットの成否を分ける科学的理由',            cat:'ダイエット', date:'2025.04.22', min:'20', link:'/articles/sleep-diet.html' },
   { id:5, title:'「痩せ菌」は実在する？腸内フローラがダイエットの成否を決める最新科学',   cat:'ダイエット', date:'2025.04.10', min:'13', link:'/articles/gut-flora-diet.html' },
-  { id:6, title:'Grok vs ChatGPT vs Claude：2025年最強AIツール比較',          cat:'比較',      date:'2025.03.28', min:'15' },
+  { id:6, title:'水を変えれば体が変わる？「飲むだけダイエット」を科学が裏付ける',          cat:'比較',      date:'2025.03.28', min:'15', link:'/articles/water-diet.html' },
 ]
 
 export default function AIBlog() {
