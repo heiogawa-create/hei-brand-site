@@ -3,6 +3,8 @@
 .resources__label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
 .resources__title{font-family:var(--font-display);font-size:clamp(32px,5vw,56px);font-weight:400;color:var(--text);margin-bottom:16px}
 .resources__desc{font-size:16px;color:var(--text-2)}
+.resources__hero-img{display:block;width:100%;max-width:1200px;height:auto;margin:32px auto 0;border-radius:var(--radius-lg)}
+@media(max-width:640px){.resources__hero-img{margin-top:24px;border-radius:12px}}
 .resource-section{margin-bottom:64px}
 .resource-section__header{display:flex;align-items:center;gap:10px;margin-bottom:20px}
 .resource-section__dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
