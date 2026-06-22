@@ -1,5 +1,5 @@
 .resources{padding-bottom:100px}
-.resources__hero{padding:80px 0 60px;border-bottom:1px solid var(--border);margin-bottom:64px;background-size:cover;background-position:center;position:relative}
+.resources__hero{padding:80px 0 60px;border-bottom:1px solid var(--border);margin-bottom:0;background-size:cover;background-position:center;position:relative}
 .resources__hero::before{content:'';position:absolute;inset:0;background:rgba(255,255,255,.15)}
 .resources__hero .container{position:relative;z-index:1}
 .resources__label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;background:rgba(255,255,255,.85);display:inline-block;padding:3px 10px;border-radius:6px}
@@ -23,7 +23,7 @@
 @media(max-width:640px){.resource-card__body{flex-direction:column;align-items:flex-start;gap:6px}.resource-card__price{text-align:left}}
 
 /* ===== whole page body: floating cards over visible background image ===== */
-.resource-list-bg{position:relative;background-size:cover;background-position:center top;background-repeat:no-repeat;background-attachment:fixed;padding-top:60px;padding-bottom:100px}
+.resource-list-bg{position:relative;background-size:cover;background-position:center bottom;background-repeat:no-repeat;background-attachment:fixed;padding-top:60px;padding-bottom:100px;min-height:70vh}
 .resource-list-bg__overlay{position:absolute;inset:0;background:rgba(245,240,232,.08)}
 .resource-list-bg__content{position:relative;z-index:1}
 .resource-grid--floating{display:flex;flex-direction:column;gap:10px;border:none;border-radius:0;overflow:visible;max-width:60%}
