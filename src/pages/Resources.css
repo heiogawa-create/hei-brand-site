@@ -6,21 +6,27 @@
 .resources__title{font-family:var(--font-display);font-size:clamp(32px,5vw,56px);font-weight:400;color:#1a1008;margin-bottom:16px;text-shadow:2px 2px 0 rgba(255,255,255,.8),-2px -2px 0 rgba(255,255,255,.8),0 0 20px rgba(255,255,255,.9)}
 .resources__desc{font-size:16px;color:#2a1a08;background:rgba(255,255,255,.75);display:inline-block;padding:6px 12px;border-radius:8px}
 @media(max-width:640px){.resources__hero{padding:56px 0 40px}}
-.resources__body{background-size:cover;background-position:center top;background-attachment:fixed;position:relative;padding:64px 0 1px}
-.resources__body::before{content:'';position:absolute;inset:0;background:rgba(245,240,232,.55)}
-.resources__body .container{position:relative;z-index:1}
 .resource-section{margin-bottom:64px}
 .resource-section__header{display:flex;align-items:center;gap:10px;margin-bottom:20px}
 .resource-section__dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.resource-section__title{font-size:13px;font-weight:500;letter-spacing:.06em;color:var(--text-2);background:rgba(255,255,255,.85);display:inline-block;padding:2px 8px;border-radius:6px}
+.resource-section__title{font-size:13px;font-weight:500;letter-spacing:.06em;color:var(--text-2)}
 .resource-grid{display:grid;grid-template-columns:1fr;gap:1px;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
-.resource-card{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:24px 28px;background:rgba(255,255,255,.92);backdrop-filter:blur(2px);border-bottom:1px solid var(--border);transition:background var(--transition)}
+.resource-card{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:24px 28px;background:var(--bg-2);border-bottom:1px solid var(--border);transition:background var(--transition)}
 .resource-card:last-child{border-bottom:none}
-.resource-card:hover{background:rgba(255,255,255,.98)}
+.resource-card:hover{background:var(--bg-3)}
 .resource-card__body{display:flex;align-items:center;gap:20px;flex:1;min-width:0}
 .resource-card__title{font-size:15px;font-weight:400;color:var(--text);flex:1;transition:color var(--transition)}
 .resource-card:hover .resource-card__title{color:var(--gold-light)}
 .resource-card__price{font-size:13px;color:var(--gold);font-weight:500;flex-shrink:0;min-width:80px;text-align:right}
 .resource-card__arrow{font-size:16px;color:var(--text-3);transition:all var(--transition);flex-shrink:0}
 .resource-card:hover .resource-card__arrow{color:var(--gold);transform:translate(2px,-2px)}
-@media(max-width:640px){.resource-card__body{flex-direction:column;align-items:flex-start;gap:6px}.resource-card__price{text-align:left}.resources__body{background-attachment:scroll}}
+@media(max-width:640px){.resource-card__body{flex-direction:column;align-items:flex-start;gap:6px}.resource-card__price{text-align:left}}
+
+/* ===== note 有料記事: floating cards over visible background image ===== */
+.resource-list-bg{position:relative;background-size:cover;background-position:center;background-repeat:no-repeat;border-radius:var(--radius-lg);padding:32px;overflow:hidden}
+.resource-list-bg__overlay{position:absolute;inset:0;background:rgba(245,240,232,.08)}
+.resource-list-bg .resource-section__header,.resource-list-bg .resource-grid--floating{position:relative;z-index:1}
+.resource-grid--floating{display:flex;flex-direction:column;gap:10px;border:none;border-radius:0;overflow:visible;max-width:60%}
+.resource-card--floating{border-radius:12px;border-bottom:none;background:rgba(255,255,255,.88);box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.resource-card--floating:hover{background:rgba(255,255,255,.96);box-shadow:0 4px 20px rgba(184,134,11,.12)}
+@media(max-width:640px){.resource-grid--floating{max-width:none}.resource-list-bg{padding:20px}}
