@@ -7,11 +7,11 @@
 .resources__desc{font-size:16px;color:#2a1a08;background:rgba(255,255,255,.75);display:inline-block;padding:6px 12px;border-radius:8px}
 @media(max-width:640px){.resources__hero{padding:56px 0 40px}}
 .resource-section{margin-bottom:64px}
-.resource-section__banner{background-size:cover;background-position:center;border-radius:var(--radius-lg);padding:32px}
+.resource-section__banner{background-size:contain;background-position:right center;background-repeat:no-repeat;border-radius:var(--radius-lg);padding:32px;min-height:480px}
 .resource-section__banner .resource-grid{max-width:560px}
 .resource-section__banner .resource-card{background:rgba(255,255,255,.92);backdrop-filter:blur(2px)}
 .resource-section__banner .resource-card:hover{background:rgba(255,255,255,.98)}
-@media(max-width:640px){.resource-section__banner{padding:20px}.resource-section__banner .resource-grid{max-width:none}}
+@media(max-width:640px){.resource-section__banner{padding:20px;min-height:0;background-position:center top;background-size:contain;padding-top:340px}.resource-section__banner .resource-grid{max-width:none}}
 .resource-section__header{display:flex;align-items:center;gap:10px;margin-bottom:20px}
 .resource-section__dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
 .resource-section__title{font-size:13px;font-weight:500;letter-spacing:.06em;color:var(--text-2)}
