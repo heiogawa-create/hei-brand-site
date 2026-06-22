@@ -23,7 +23,7 @@
 @media(max-width:640px){.resource-card__body{flex-direction:column;align-items:flex-start;gap:6px}.resource-card__price{text-align:left}}
 
 /* ===== whole page body: floating cards over visible background image ===== */
-.resource-list-bg{position:relative;background-size:cover;background-position:center bottom;background-repeat:no-repeat;background-attachment:fixed;padding-top:60px;padding-bottom:100px;min-height:70vh}
+.resource-list-bg{position:relative;background-size:cover;background-position:center 25%;background-repeat:no-repeat;background-attachment:fixed;padding-top:60px;padding-bottom:100px;min-height:70vh}
 .resource-list-bg__overlay{position:absolute;inset:0;background:rgba(245,240,232,.08)}
 .resource-list-bg__content{position:relative;z-index:1}
 .resource-grid--floating{display:flex;flex-direction:column;gap:10px;border:none;border-radius:0;overflow:visible;max-width:60%}
