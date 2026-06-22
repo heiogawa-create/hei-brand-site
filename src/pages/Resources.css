@@ -22,11 +22,11 @@
 .resource-card:hover .resource-card__arrow{color:var(--gold);transform:translate(2px,-2px)}
 @media(max-width:640px){.resource-card__body{flex-direction:column;align-items:flex-start;gap:6px}.resource-card__price{text-align:left}}
 
-/* ===== note 有料記事: floating cards over visible background image ===== */
-.resource-list-bg{position:relative;background-size:cover;background-position:center;background-repeat:no-repeat;border-radius:var(--radius-lg);padding:32px;overflow:hidden}
+/* ===== whole page body: floating cards over visible background image ===== */
+.resource-list-bg{position:relative;background-size:cover;background-position:center top;background-repeat:no-repeat;background-attachment:fixed;padding-top:60px;padding-bottom:100px}
 .resource-list-bg__overlay{position:absolute;inset:0;background:rgba(245,240,232,.08)}
-.resource-list-bg .resource-section__header,.resource-list-bg .resource-grid--floating{position:relative;z-index:1}
+.resource-list-bg__content{position:relative;z-index:1}
 .resource-grid--floating{display:flex;flex-direction:column;gap:10px;border:none;border-radius:0;overflow:visible;max-width:60%}
 .resource-card--floating{border-radius:12px;border-bottom:none;background:rgba(255,255,255,.88);box-shadow:0 2px 12px rgba(0,0,0,.06)}
 .resource-card--floating:hover{background:rgba(255,255,255,.96);box-shadow:0 4px 20px rgba(184,134,11,.12)}
-@media(max-width:640px){.resource-grid--floating{max-width:none}.resource-list-bg{padding:20px}}
+@media(max-width:640px){.resource-grid--floating{max-width:none}.resource-list-bg{background-attachment:scroll}}
