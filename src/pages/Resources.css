@@ -5,7 +5,7 @@
 .resources__label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;background:rgba(255,255,255,.85);display:inline-block;padding:3px 10px;border-radius:6px}
 .resources__title{font-family:var(--font-display);font-size:clamp(32px,5vw,56px);font-weight:400;color:#1a1008;margin-bottom:16px;text-shadow:2px 2px 0 rgba(255,255,255,.8),-2px -2px 0 rgba(255,255,255,.8),0 0 20px rgba(255,255,255,.9)}
 .resources__desc{font-size:16px;color:#2a1a08;background:rgba(255,255,255,.75);display:inline-block;padding:6px 12px;border-radius:8px}
-@media(max-width:640px){.resources__hero{padding:56px 0 40px}}
+@media(max-width:640px){.resources__hero{padding:56px 0 40px;background-position:center 25%}}
 .resource-section{margin-bottom:64px}
 .resource-section__header{display:flex;align-items:center;gap:10px;margin-bottom:20px}
 .resource-section__dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
@@ -29,4 +29,4 @@
 .resource-grid--floating{display:flex;flex-direction:column;gap:10px;border:none;border-radius:0;overflow:visible;max-width:60%}
 .resource-card--floating{border-radius:12px;border-bottom:none;background:rgba(255,255,255,.88);box-shadow:0 2px 12px rgba(0,0,0,.06)}
 .resource-card--floating:hover{background:rgba(255,255,255,.96);box-shadow:0 4px 20px rgba(184,134,11,.12)}
-@media(max-width:640px){.resource-grid--floating{max-width:none}}
+@media(max-width:640px){.resource-grid--floating{max-width:none}.resource-list-bg{background-position:center 20%}}
