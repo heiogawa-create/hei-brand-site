@@ -151,4 +151,7 @@
 }
 @media(max-width:640px){
   .platforms__grid{grid-template-columns:1fr}
+  .hero__photo-bg{background-position:center 18%}
+  .categories{background-position:center 25%}
+  .platforms{background-position:center 25%}
 }
