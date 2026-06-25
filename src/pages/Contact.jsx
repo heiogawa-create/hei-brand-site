@@ -11,7 +11,7 @@ e.preventDefault()
 setSending(true)
 setError('')
 try{
-const res=await fetch('https://formsubmit.co/ajax/heiogawa@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({name:form.name,email:form.email,_subject:form.subject||'お問い合わせ',message:form.message})})
+const res=await fetch('https://formsubmit.co/ajax/heiogawa@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({name:form.name,email:form.email,_subject:form.subject||'お問い合わせ',message:form.message,_captcha:'false',_template:'table'})})
 if(res.ok){setSent(true)}else{setError('送信に失敗しました。もう一度お試しください。')}
 }catch{setError('通信エラーが発生しました。もう一度お試しください。')}
 setSending(false)
