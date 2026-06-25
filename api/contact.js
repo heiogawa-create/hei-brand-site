@@ -12,7 +12,7 @@ export default async function handler(req, res) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      from: 'お問い合わせ <onboarding@resend.dev>',
+      from: 'HEI公式サイト <onboarding@resend.dev>',
       to: 'heiogawa@gmail.com',
       reply_to: email,
       subject: subject || 'サイトからのお問い合わせ',
