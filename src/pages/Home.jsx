@@ -57,7 +57,7 @@ export default function Home() {
             </div>
             <div className="hero__stat-divider" />
             <div className="hero__stat">
-              <span className="hero__stat-num">670+</span>
+              <span className="hero__stat-num">500+</span>
               <span className="hero__stat-label">KDP出版作品</span>
             </div>
             <div className="hero__stat-divider" />
