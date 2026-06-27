@@ -1,9 +1,9 @@
-export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' })
+export const handler = async (event) => {
+  if (event.httpMethod !== 'POST') {
+    return { statusCode: 405, body: JSON.stringify({ error: 'Method not allowed' }) }
   }
 
-  const { name, email, subject, message } = req.body
+  const { name, email, subject, message } = JSON.parse(event.body)
 
   const response = await fetch('https://api.resend.com/emails', {
     method: 'POST',
@@ -21,7 +21,7 @@ export default async function handler(req, res) {
   })
 
   if (response.ok) {
-    return res.status(200).json({ success: true })
+    return { statusCode: 200, body: JSON.stringify({ success: true }) }
   }
-  return res.status(500).json({ error: '送信に失敗しました' })
+  return { statusCode: 500, body: JSON.stringify({ error: '送信に失敗しました' }) }
 }
