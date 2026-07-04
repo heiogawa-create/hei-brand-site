@@ -11,7 +11,7 @@ e.preventDefault()
 setSending(true)
 setError('')
 try{
-const res=await fetch('/.netlify/functions/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:form.name,email:form.email,subject:form.subject,message:form.message})})
+const res=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:form.name,email:form.email,subject:form.subject,message:form.message})})
 if(res.ok){setSent(true)}else{setError('送信に失敗しました。もう一度お試しください。')}
 }catch{setError('通信エラーが発生しました。もう一度お試しください。')}
 setSending(false)

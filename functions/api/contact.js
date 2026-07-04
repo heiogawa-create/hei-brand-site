@@ -1,14 +1,10 @@
-export const handler = async (event) => {
-  if (event.httpMethod !== 'POST') {
-    return { statusCode: 405, body: JSON.stringify({ error: 'Method not allowed' }) }
-  }
-
-  const { name, email, subject, message } = JSON.parse(event.body)
+export async function onRequestPost(context) {
+  const { name, email, subject, message } = await context.request.json()
 
   const response = await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: {
-      'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+      'Authorization': `Bearer ${context.env.RESEND_API_KEY}`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
@@ -21,7 +17,12 @@ export const handler = async (event) => {
   })
 
   if (response.ok) {
-    return { statusCode: 200, body: JSON.stringify({ success: true }) }
+    return new Response(JSON.stringify({ success: true }), {
+      headers: { 'Content-Type': 'application/json' },
+    })
   }
-  return { statusCode: 500, body: JSON.stringify({ error: '送信に失敗しました' }) }
+  return new Response(JSON.stringify({ error: '送信に失敗しました' }), {
+    status: 500,
+    headers: { 'Content-Type': 'application/json' },
+  })
 }
