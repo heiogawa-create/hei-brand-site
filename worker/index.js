@@ -1,10 +1,22 @@
-export async function onRequestPost(context) {
-  const { name, email, subject, message } = await context.request.json()
+export default {
+  async fetch(request, env) {
+    const url = new URL(request.url)
+
+    if (url.pathname === '/api/contact' && request.method === 'POST') {
+      return handleContact(request, env)
+    }
+
+    return env.ASSETS.fetch(request)
+  },
+}
+
+async function handleContact(request, env) {
+  const { name, email, subject, message } = await request.json()
 
   const response = await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: {
-      'Authorization': `Bearer ${context.env.RESEND_API_KEY}`,
+      'Authorization': `Bearer ${env.RESEND_API_KEY}`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
