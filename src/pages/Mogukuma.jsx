@@ -128,7 +128,7 @@ export default function Mogukuma() {
           撮るだけで<br /><em>カロリー記録。</em><br />続くダイエットへ。
         </h1>
         <p className="moku-hero__sub">AIダイエットアプリ「もぐクマDiet」</p>
-        <a href="https://mogukuma-diet.vercel.app" target="_blank" rel="noreferrer" className="moku-hero__cta">
+        <a href="https://mogukuma-diet.heiogawa.workers.dev" target="_blank" rel="noreferrer" className="moku-hero__cta">
           ▶ 無料で使ってみる（登録1分・メールのみ）
         </a>
         <p className="moku-hero__note">クレジットカード不要 ・ いつでも解約可能</p>
@@ -404,7 +404,7 @@ export default function Mogukuma() {
       <div className="moku-final-cta">
         <h2>未来の身体は、<br />今日の1枚の写真から変わり始める。</h2>
         <p>まずは無料版から試してみてください。<br />入力の手間がなくなるだけで、ダイエットの続けやすさが変わります。</p>
-        <a href="https://mogukuma-diet.vercel.app" target="_blank" rel="noreferrer" className="moku-final-cta__btn">
+        <a href="https://mogukuma-diet.heiogawa.workers.dev" target="_blank" rel="noreferrer" className="moku-final-cta__btn">
           ▶ もぐクマDietを無料で使ってみる
         </a>
         <p className="moku-final-cta__note">登録1分・メールのみ・クレジットカード不要</p>
@@ -414,14 +414,14 @@ export default function Mogukuma() {
       <footer className="moku-footer">
         <p>🐻 もぐクマDiet</p>
         <p>開発者・理学療法士　小川 修平</p>
-        <p><a href="https://mogukuma-diet.vercel.app" target="_blank" rel="noreferrer">mogukuma-diet.vercel.app</a></p>
+        <p><a href="https://mogukuma-diet.heiogawa.workers.dev" target="_blank" rel="noreferrer">mogukuma-diet.heiogawa.workers.dev</a></p>
         <p style={{ marginTop: '12px', fontSize: '11px' }}>© 2025 もぐクマDiet. All rights reserved.</p>
       </footer>
 
       {/* ===== STICKY BAR ===== */}
       <div className={`moku-sticky${stickyShow ? ' moku-sticky--show' : ''}`}>
         <span>🐻 無料で始められます</span>
-        <a href="https://mogukuma-diet.vercel.app" target="_blank" rel="noreferrer">いますぐ試す →</a>
+        <a href="https://mogukuma-diet.heiogawa.workers.dev" target="_blank" rel="noreferrer">いますぐ試す →</a>
       </div>
 
     </div>
