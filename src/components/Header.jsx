@@ -1,7 +1,7 @@
 import{useState,useEffect}from'react'
 import{Link,useLocation}from'react-router-dom'
 import'./Header.css'
-const NAV=[{to:'/',label:'ホーム'},{to:'/health',label:'健康・栄養'},{to:'/ai',label:'ダイエット豆知識'},{to:'/mogukuma',label:'モグクマ'},{to:'/rehacare-90',label:'90日ケア'},{to:'/resources',label:'おすすめ教材'},{to:'/about',label:'プロフィール'}]
+const NAV=[{to:'/',label:'ホーム'},{to:'/health',label:'健康・栄養'},{to:'/ai',label:'ダイエット豆知識'},{to:'/apps',label:'アプリ'},{to:'/mogukuma',label:'モグクマ'},{to:'/rehacare-90',label:'90日ケア'},{to:'/resources',label:'おすすめ教材'},{to:'/about',label:'プロフィール'}]
 export default function Header(){
 const[scrolled,setScrolled]=useState(false)
 const[open,setOpen]=useState(false)
