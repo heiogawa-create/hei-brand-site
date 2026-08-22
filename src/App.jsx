@@ -9,7 +9,9 @@ import RehaCare90 from './pages/RehaCare90'
 import Resources from './pages/Resources'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import Terms from './pages/Terms'
+import Privacy from './pages/Privacy'
 import NotFound from './pages/NotFound'
 function ScrollToTop(){const{pathname}=useLocation();useEffect(()=>{window.scrollTo(0,0)},[pathname]);return null}
-function AppRoutes(){return(<Layout><ScrollToTop/><Routes><Route path="/" element={<Home/>}/><Route path="/health" element={<HealthBlog/>}/><Route path="/ai" element={<AIBlog/>}/><Route path="/mogukuma" element={<Mogukuma/>}/><Route path="/rehacare-90" element={<RehaCare90/>}/><Route path="/resources" element={<Resources/>}/><Route path="/about" element={<About/>}/><Route path="/contact" element={<Contact/>}/><Route path="*" element={<NotFound/>}/></Routes></Layout>)}
+function AppRoutes(){return(<Layout><ScrollToTop/><Routes><Route path="/" element={<Home/>}/><Route path="/health" element={<HealthBlog/>}/><Route path="/ai" element={<AIBlog/>}/><Route path="/mogukuma" element={<Mogukuma/>}/><Route path="/rehacare-90" element={<RehaCare90/>}/><Route path="/resources" element={<Resources/>}/><Route path="/about" element={<About/>}/><Route path="/contact" element={<Contact/>}/><Route path="/terms" element={<Terms/>}/><Route path="/privacy" element={<Privacy/>}/><Route path="*" element={<NotFound/>}/></Routes></Layout>)}
 export default function App(){return(<BrowserRouter><AppRoutes/></BrowserRouter>)}
