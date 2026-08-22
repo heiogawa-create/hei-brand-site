@@ -12,4 +12,7 @@
 .footer__nav-link{font-size:13px;color:var(--text-2);transition:color var(--transition)}
 .footer__nav-link:hover{color:var(--gold)}
 .footer__bottom{padding-top:28px;display:flex;justify-content:space-between;font-size:12px;color:var(--text-3);flex-wrap:wrap;gap:8px}
+.footer__legal{display:flex;gap:16px}
+.footer__legal-link{font-size:12px;color:var(--text-3);transition:color var(--transition)}
+.footer__legal-link:hover{color:var(--gold)}
 @media(max-width:768px){.footer__top{grid-template-columns:1fr 1fr}.footer__brand{grid-column:1/-1}}

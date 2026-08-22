@@ -1,0 +1,16 @@
+.legal{padding-bottom:100px}
+.legal__hero{padding:80px 0 60px;border-bottom:1px solid var(--border);margin-bottom:64px}
+.legal__label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.legal__title{font-family:var(--font-display);font-size:clamp(32px,5vw,56px);font-weight:400;color:var(--text);margin-bottom:16px}
+.legal__desc{font-size:15px;color:var(--text-2);line-height:1.8}
+.legal__body{max-width:760px}
+.legal__intro{font-size:15px;color:var(--text-2);line-height:1.9;margin-bottom:48px}
+.legal__section{padding:28px 0;border-bottom:1px solid var(--border)}
+.legal__section:last-of-type{border-bottom:none}
+.legal__section-title{font-family:var(--font-display);font-size:22px;font-weight:400;color:var(--text);margin-bottom:14px;line-height:1.4}
+.legal__section p{font-size:14px;color:var(--text-2);line-height:1.9}
+.legal__section p+p{margin-top:12px}
+.legal__section ul{margin-top:12px;padding-left:20px;display:flex;flex-direction:column;gap:8px}
+.legal__section li{font-size:14px;color:var(--text-2);line-height:1.8;list-style:disc}
+.legal__contact{margin-top:12px;font-size:14px;color:var(--gold)}
+.legal__date{margin-top:56px;font-size:13px;color:var(--text-3)}
