@@ -2,8 +2,12 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url)
 
-    if (url.pathname === '/tiktokYDYYNJQNdbCOMFTuBarixxeg1MQVneOS.txt') {
-      return new Response('tiktok-developers-site-verification=YDYYNJQNdbCOMFTuBarixxeg1MQVneOS\n', {
+    // TikTok URL-prefix ownership verification.
+    // TikTok may generate a different verification filename each time,
+    // so return the current verification token for any root-level
+    // tiktok*.txt verification request.
+    if (/^\/tiktok[^/]*\.txt$/.test(url.pathname)) {
+      return new Response('tiktok-developers-site-verification=5MYnyLLkkTfhbUObMWmMbSnCo5d640mb\n', {
         status: 200,
         headers: {
           'Content-Type': 'text/plain; charset=utf-8',
