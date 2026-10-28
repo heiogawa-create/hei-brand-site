@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta http-equiv="Cache-Control" content="no-store">
+  <title>SUZURI Auto Studio | 認証コールバック</title>
+  <style>
+    :root{color-scheme:light}*{box-sizing:border-box}body{margin:0;background:#f7f8fb;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#172033;min-height:100vh;display:grid;place-items:center;padding:24px}
+    main{width:min(100%,660px);background:white;border:1px solid #dde4ed;border-radius:18px;padding:30px;box-shadow:0 14px 50px #17203312}h1{font-size:1.5rem;margin:0 0 6px}p{line-height:1.7}.sub{color:#566273}.result{border-radius:12px;background:#f2f6fb;padding:18px;margin:20px 0}code{display:block;overflow-wrap:anywhere;line-height:1.65;background:#e9f0f9;padding:12px;border-radius:8px;font-size:.88rem}button{background:#1559bd;border:0;border-radius:9px;color:white;padding:11px 18px;font:inherit;cursor:pointer;margin-top:12px}button:disabled{opacity:.5}.warn{font-size:.87rem;color:#6b4a2d}#status{font-weight:700}.footer{font-size:.82rem;color:#657287}
+  </style>
+</head>
+<body>
+<main>
+  <h1>SUZURI Auto Studio</h1>
+  <p class="sub">SUZURI認証の戻り先ページ</p>
+  <section class="result" aria-live="polite">
+    <div id="status">認証結果を確認しています…</div>
+    <p id="message"></p>
+    <div id="code-area" hidden>
+      <p><strong>認可コード</strong></p>
+      <code id="auth-code"></code>
+      <button type="button" id="copy">認可コードをコピー</button>
+    </div>
+  </section>
+  <p class="warn">認可コードやアクセストークンをチャット・SNSに投稿しないでください。このページは受信したコードを表示するだけで、外部サービスへ送信せず、トークン交換もしません。SUZURI Auto Studio側で <code>state</code> を照合し、サーバー側または安全なローカル環境でトークン交換してください。</p>
+  <p class="footer">認証結果のURLに含まれるコードは、表示後にブラウザーのアドレス欄から取り除きます。</p>
+</main>
+<script>
+(function(){
+  'use strict';
+  var params = new URLSearchParams(window.location.search);
+  var code = params.get('code');
+  var error = params.get('error');
+  var desc = params.get('error_description');
+  var status = document.getElementById('status');
+  var message = document.getElementById('message');
+  var area = document.getElementById('code-area');
+  var codeEl = document.getElementById('auth-code');
+  try { history.replaceState(null, '', window.location.origin + window.location.pathname); } catch(e) {}
+  if(error){
+    status.textContent = '認証が完了しませんでした';
+    message.textContent = [error, desc].filter(Boolean).join('：');
+  } else if(code){
+    status.textContent = 'SUZURIの認可コードを受け取りました';
+    message.textContent = '下のコードを安全な連携ツールに渡してください。ユーザーへの公開や再利用はしないでください。';
+    codeEl.textContent = code;
+    area.hidden = false;
+    document.getElementById('copy').addEventListener('click', async function(){
+      try { await navigator.clipboard.writeText(code); this.textContent = 'コピーしました'; }
+      catch(e){ this.textContent = 'コピーできませんでした。コードを選択してコピーしてください'; }
+    });
+  } else {
+    status.textContent = 'コールバックページの準備ができています';
+    message.textContent = 'このページはSUZURIの認証が終わると自動で開きます。コールバックURLをSUZURIのアプリ登録欄に入力してください。';
+  }
+})();
+</script>
+</body>
+</html>
